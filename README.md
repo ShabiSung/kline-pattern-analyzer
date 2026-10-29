@@ -32,7 +32,7 @@ AI 會自己完成下載、安裝與測試。裝好後，**重新開啟 Claude C
 
 claude.ai 裡的 AI 無法修改你的帳號設定，所以這一步要自己做：
 
-1. 下載 **[kline-pattern-analyzer.zip](https://github.com/ShabiSung/kline-pattern-analyzer/releases/latest/download/kline-pattern-analyzer.zip)**，不用解壓縮。
+1. 下載 **[kline-pattern-analyzer.zip](https://github.com/ShabiSung/kline-pattern-analyzer/raw/main/dist/kline-pattern-analyzer.zip)**，不用解壓縮。
 2. 到 **設定 › 功能（Capabilities）**，開啟「程式碼執行與檔案建立」。
 3. 在同一頁的 **Skills** 區塊按「上傳 Skill」，選擇剛剛的 zip。
 4. 開新對話測試：「畫一張頭肩底的型態示意圖給我」，看到圖就代表成功。
@@ -157,6 +157,7 @@ skills/kline-pattern-analyzer/
   references/                型態辨識條件
   scripts/                   標註與示意圖腳本
   assets/fonts/              Noto Sans TC（SIL Open Font License 1.1）
+dist/kline-pattern-analyzer.zip   給 claude.ai 上傳用的打包檔（與 skills/ 內容相同）
 ```
 
 ## 免責聲明
