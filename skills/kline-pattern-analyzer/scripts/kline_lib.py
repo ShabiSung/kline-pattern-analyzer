@@ -470,6 +470,26 @@ def _build_library():
 
 PATTERNS = _build_library()
 
+_DOWN_NOTES = {
+    "rectangle": {"確認": "收盤跌破箱底，量增更可靠；跌破後箱底轉為壓力。", "失效": "跌破後又站回箱子裡，常是假跌破。",
+                  "目標": "箱子的高度，從跌破點往下扣。"},
+    "symmetrical_triangle": {"確認": "收盤跌破下方的低點連線，量增更可靠。", "失效": "跌破後很快回到三角形內。",
+                             "目標": "三角形開口（最寬處）的高度，從跌破點往下扣。"},
+}
+
+
+def breakdown_variant(p):
+    """方向未定的型態（箱型、對稱三角形）改畫成向下跌破的版本。"""
+    if p["key"] not in _DOWN_NOTES:
+        raise SystemExit("只有箱型（rectangle）與對稱三角形（symmetrical_triangle）有向下跌破的版本。")
+    q = _flip_pattern(p, bias="bear", name=p["name"] + "－向下跌破")
+    swap = {"箱頂壓力": "箱底支撐", "箱底支撐": "箱頂壓力", "高點下移": "低點墊高", "低點墊高": "高點下移"}
+    q["lines"] = [(a, b, swap.get(t, t), s) for a, b, t, s in q["lines"]]
+    x, y, t = q["break"]
+    q["break"] = (x, y, {"突破箱頂": "跌破箱底", "突破收斂": "跌破收斂"}.get(t, t))
+    q["notes"] = {**p["notes"], **_DOWN_NOTES[p["key"]]}
+    return q
+
 BIAS_LABEL = {"bull": "看漲", "bear": "看空", "neutral": "方向待確認"}
 
 

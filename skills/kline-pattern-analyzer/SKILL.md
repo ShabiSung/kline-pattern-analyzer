@@ -128,6 +128,7 @@ python $SKILL/scripts/draw_pattern.py <型態代碼> -o /mnt/user-data/outputs/�
 
 - `--convention` 要和原圖一致：`tw` 是紅漲綠跌，`us` 是綠漲紅跌。
 - 用 `--list` 可以列出所有型態代碼。
+- 箱型（`rectangle`）或對稱三角形（`symmetrical_triangle`）向下跌破時，加上 `--down`，畫成跌破的版本。
 
 **C. 找不到上傳檔案時**：只產生 B，並在文字中描述型態在原圖上的位置，例如「左肩在 3 月中、約 580 元」。
 

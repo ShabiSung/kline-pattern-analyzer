@@ -61,12 +61,15 @@ def luminance(img):
     return float((0.2126 * rgb[..., 0] + 0.7152 * rgb[..., 1] + 0.0722 * rgb[..., 2]).mean())
 
 
+NO_LINE_START = "，。、；：！？）」』》%％,.;:!?)"
+
+
 def wrap(text, width):
     """中英混排的簡易斷行：中文字算 1 格、英數算 0.55 格。"""
     lines, cur, w = [], "", 0.0
     for ch in text:
         cw = 0.55 if ord(ch) < 0x2E80 else 1.0
-        if w + cw > width and cur:
+        if w + cw > width and cur and ch not in NO_LINE_START:
             lines.append(cur)
             cur, w = "", 0.0
         cur += ch

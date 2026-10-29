@@ -155,6 +155,7 @@ def main():
     ap.add_argument("--list", action="store_true", help="列出所有型態")
     ap.add_argument("--all", action="store_true", help="輸出所有型態各一張")
     ap.add_argument("--sheet", action="store_true", help="輸出全部型態一覽表")
+    ap.add_argument("--down", action="store_true", help="箱型、對稱三角形改畫向下跌破的版本")
     a = ap.parse_args()
     K.setup_fonts()
     col = K.colors(a.convention)
@@ -176,6 +177,8 @@ def main():
     if not a.pattern:
         ap.error("請指定型態，或用 --list 查看可用型態")
     p = K.find_pattern(a.pattern)
+    if a.down:
+        p = K.breakdown_variant(p)
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     render(p, col, a.out)
     print(a.out)
