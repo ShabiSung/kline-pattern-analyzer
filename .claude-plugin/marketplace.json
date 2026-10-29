@@ -1,0 +1,16 @@
+{
+  "name": "kline-course",
+  "owner": { "name": "ShabiSung" },
+  "metadata": {
+    "description": "K 線型態判讀 Skill（繁體中文）",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "kline-pattern-analyzer",
+      "source": "./",
+      "description": "上傳 K 線截圖，自動判斷型態、看漲或看空、多空分界價位，並在原圖上標註",
+      "version": "1.0.0"
+    }
+  ]
+}
