@@ -148,6 +148,17 @@ python3 "$SKILL/scripts/draw_pattern.py" head_shoulders_bottom -o kline-test.png
 
 ---
 
+## 課程講義
+
+不用登入，點了就能看：
+
+- [0050 上漲，正二為什麼反而落後？](handouts/leveraged-etf-vs-0050.md)
+- [用 AI 整理筆記：五個技巧與六段提示詞](handouts/ai-note-prompts.md)
+
+全部講義與 PDF 下載：[handouts](handouts/)
+
+---
+
 ## 檔案結構
 
 ```
@@ -158,6 +169,7 @@ skills/kline-pattern-analyzer/
   scripts/                   標註與示意圖腳本
   assets/fonts/              Noto Sans TC（SIL Open Font License 1.1）
 dist/kline-pattern-analyzer.zip   給 claude.ai 上傳用的打包檔（與 skills/ 內容相同）
+handouts/                    課程講義（Markdown 與 PDF）
 ```
 
 ## 免責聲明
