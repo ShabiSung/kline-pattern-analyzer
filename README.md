@@ -148,6 +148,23 @@ python3 "$SKILL/scripts/draw_pattern.py" head_shoulders_bottom -o kline-test.png
 
 ---
 
+## 另一個工具：Kronos AI 預測
+
+用開源的 K 線 AI 模型 Kronos 預測股票、ETF、加密貨幣未來的走勢，並產生互動網頁報告。第一次使用時，Claude 會先教你怎麼操作、怎麼看預測區間。這個工具需要 Claude Code。
+
+![Kronos 報告範例](plugins/kronos-forecast/docs/example-report.png)
+
+安裝方式：開啟 Claude Code，貼上這段話：
+
+```
+請幫我安裝 Kronos 預測工具：https://github.com/ShabiSung/kline-pattern-analyzer/tree/main/plugins/kronos-forecast
+照 README 裡「給 AI 的安裝步驟」做，裝好後教我怎麼用。
+```
+
+完整說明：[plugins/kronos-forecast](plugins/kronos-forecast/)
+
+---
+
 ## 課程講義
 
 不用登入，點了就能看：
@@ -170,6 +187,7 @@ skills/kline-pattern-analyzer/
   assets/fonts/              Noto Sans TC（SIL Open Font License 1.1）
 dist/kline-pattern-analyzer.zip   給 claude.ai 上傳用的打包檔（與 skills/ 內容相同）
 handouts/                    課程講義（Markdown 與 PDF）
+plugins/kronos-forecast/     Kronos AI 預測報告 Skill（另一個外掛）
 ```
 
 ## 免責聲明
