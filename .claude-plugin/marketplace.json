@@ -1,11 +1,9 @@
 {
   "name": "kline-course",
-  "owner": {
-    "name": "ShabiSung"
-  },
+  "owner": { "name": "ShabiSung" },
   "metadata": {
-    "description": "K 線型態判讀與 Kronos AI 預測（繁體中文）",
-    "version": "1.1.0"
+    "description": "K 線型態判讀 Skill（繁體中文）",
+    "version": "1.0.2"
   },
   "plugins": [
     {
@@ -13,12 +11,6 @@
       "source": "./",
       "description": "上傳 K 線截圖，自動判斷型態、看漲或看空、多空分界價位，並在原圖上標註",
       "version": "1.0.2"
-    },
-    {
-      "name": "kronos-forecast",
-      "source": "./plugins/kronos-forecast",
-      "description": "用開源 K 線 AI 模型 Kronos 預測股票、ETF、加密貨幣走勢，Claude 會先教學，再產生互動網頁報告",
-      "version": "1.0.0"
     }
   ]
 }
